@@ -1,22 +1,11 @@
 #include <stdio.h>
+#include <sys/types.h>
 
-int main(){
-	int* pc;
-	int c = 22;
-
-	printf("Address of c:%d\n",&c);
-	printf("Value of c:%d\n\n",c);
-	pc=&c;
-
-	printf("Address of pointer pc:%d\n",pc);
-	printf("Content of pointer pc:%d\n\n",*pc);
-	c=11;
-
-	printf("Address of pointer pc:%d\n",pc);
-	printf("Content of pointer pc:%d\n\n",*pc);
-	*pc=2;
-
-	printf("Address of c:%d\n",&c);
-	printf("Value of c:%d\n\n",c);
-	return 0;
+void main()
+{
+    pid_t n = getpid();
+    printf("Hello from parent [PID - %d]\n, n);
+    fork();
+    n = getpid();
+    printf("Hello from child [PID - %d]\n, n);
 }
