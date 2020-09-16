@@ -1,15 +1,24 @@
-#include <unistd.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <pthread.h>
+
+void *thread(void *vargp){
+	sleep(1);
+	pthread_t self = pthread_self();
+	printf("Hello world %u\n", self);
+	return NULL;
+}
 
 int main(){
-  int parentPID = getpid();
-  fork();
-  int childPID = getpid();
+	pthread_t tid[3];
 
-  if(parentPID == childPID){
-    printf("Hello from parent [PID - %d]\n", parentPID);
-  } else {
-    printf("Hello from child [PID - %d]\n", childPID);
-  }
-  return 0;
+	for (int i = 0; i < 3 ; ++i)
+	{
+		pthread_create(&tid[i], NULL, thread, NULL);
+		printf("before thread %u\n", tid[i]);
+		pthread_join(tid[i], NULL);
+		printf("after thread\n");		
+	}
 }
+
