@@ -1,0 +1,7 @@
+The following sequence increases amount of hit, since most of the time pages WILL be on the table. Most of the pages are accessed several times before they are removed and amount of pages is few which results higher HIT rate.
+
+1 2 1 2 3 1 2 1 2 3 4 1 2 3 4 4 3 1 2 3 4 7 0 9 1 3 2 3 4 1 3 4 5 1 3 2 4 1 2 2 1 1 4 4 3 4 1 1 3 5 1 2 3
+
+However, following sequence of references of pages result extremely low HIT rate and huge MISS rate. This is achieved via increased page number and via referencing of pages inconsistently. 
+
+1 2 3 4 5 6 1 4 56 7 8 9 0 1 2 3 4 5 6 0 1 3 34 56 78 14 13 57 899 182 1234  45 6 6 78 8 32 5 6 11
