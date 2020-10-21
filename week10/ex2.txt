@@ -1,0 +1,5 @@
+../week01/file.txt
+../week10/_ex2.txt
+
+sadfrm: remove regular empty file '../week01/file.txt'? yes
+rm: remove regular empty file '../week10/_ex2.txt'? yes

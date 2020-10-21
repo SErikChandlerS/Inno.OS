@@ -1,0 +1,11 @@
+ls -ld _ex3.txt    
+-rwxr--rwx 1 ErikChandler ErikChandler  0 Oct 20 21:15 _ex3.txt
+-rwxrwxrwx 1 ErikChandler ErikChandler  0 Oct 20 21:15 _ex3.txt
+
+
+r (read) = 4 
+w (write) = 2 
+x (execute) = 1
+660 - user(read and write permission), group(read and write permission), others(no permissions)
+775 - user(all permissions), group(all permissions), others(read and execute permissions)
+777 - user(all permissions), group(all permissions), others(all permissions)
