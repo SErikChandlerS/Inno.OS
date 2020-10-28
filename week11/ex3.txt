@@ -1,0 +1,4 @@
+In exercise 3 first program prints following "Hello\nHello\n" because after printf("Hello") string "Hello" is stored in the line buffer, fork() produced child process which has the same data(including buffer). Thus, after line printf("\n") new line character is added to the buffer where already the string "Hello". As line buffer prints after accepting new line character, child process eventually will print "Hello\n". The same thing will be with parent process, thus final output is "Hello\nHello\n"
+
+In second program, after line printf("Hello\n") buffer will store and this string-"Hello\n" will be immeadeately printed. Then buffer will be flushed, thus, after creation of child process line printf("\n") will print only new line. The same will do parent process i.e print new line character. Eventually, output is "Hello\n\n"
+ 
